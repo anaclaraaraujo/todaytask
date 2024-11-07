@@ -5,7 +5,7 @@ export function Button() {
   return (
     <button className={styles.button}>
       Criar
-      <PlusCircle/ >
+      <PlusCircle size={16} color="#f2f2f2" weight="bold" />
     </button>
   )
 }

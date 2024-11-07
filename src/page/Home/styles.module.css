@@ -16,3 +16,15 @@
     margin-bottom: 3.2rem;
   }
 }
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+}

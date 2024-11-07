@@ -21,6 +21,8 @@
 
   transform: 0.2s;
 
+  cursor: pointer;
+
   &:hover {
     background-color: var(--blue);
   }
