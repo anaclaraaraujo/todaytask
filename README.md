@@ -31,7 +31,7 @@
 ## Como usar o projeto
 ### 1. Clone o repositório
 ```sh
-git clone https://github.com/anaclaraaraujo/today-task
+git clone https://github.com/anaclaraaraujo/todaytask
 ```
 
 ### 2. Instale as dependências
