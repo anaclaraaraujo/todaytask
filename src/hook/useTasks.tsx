@@ -73,5 +73,6 @@ export function useTasks() {
     addTask,
     removeTask,
     toggleTaskStatus,
+    setTasks
   }
 }
