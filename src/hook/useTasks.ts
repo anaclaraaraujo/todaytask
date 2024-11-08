@@ -6,16 +6,12 @@ export function useTasks() {
 
   // tarefas iniciais de exemplo para o usuario
   const initialTasks: Task[] = [
-    { id: 1, text: "Configurar o ambiente de desenvolvimento (React, TypeScript, etc.)", isChecked: true },
-    { id: 2, text: "Criar a estrutura básica do projeto (pastas e arquivos)", isChecked: true },
-    { id: 3, text: "Implementar a tela de cadastro de tarefas", isChecked: true },
-    { id: 4, text: "Integrar com o localStorage para persistir as tarefas", isChecked: true },
-    { id: 5, text: "Criar componentes reutilizáveis (Button, Input, etc.)", isChecked: true },
-    { id: 6, text: "Implementar a funcionalidade de marcar/desmarcar tarefas", isChecked: true },
-    { id: 7, text: "Adicionar a opção de remover tarefas", isChecked: true },
-    { id: 8, text: "Criar um contador de tarefas feitas e pendentes", isChecked: true },
-    { id: 9, text: "Testar as funcionalidades e corrigir bugs", isChecked: false },
-    { id: 10, text: "Fazer deploy do projeto", isChecked: false },
+    { id: 1, text: "Implementar a tela de cadastro de tarefas", isChecked: true },
+    { id: 2, text: "Implementar a funcionalidade de marcar/desmarcar tarefas", isChecked: true },
+    { id: 3, text: "Adicionar a opção de remover tarefas", isChecked: true },
+    { id: 4, text: "Criar um contador de tarefas feitas e pendentes", isChecked: true },
+    { id: 5, text: "Testar as funcionalidades e corrigir bugs", isChecked: false },
+    { id: 6, text: "Fazer deploy do projeto", isChecked: false },
   ];
   
   // recupera as tarefas do localStorage
