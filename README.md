@@ -50,4 +50,4 @@ http://localhost:5173/
 ```
 
 ## Licença 
-[![Licença](https://img.shields.io/github/license/anaclaraaraujo/today-task)](https://github.com/anaclaraaraujo/todaytask/blob/main/LICENSE)
+[![Licença](https://img.shields.io/github/license/anaclaraaraujo/todaytask)](https://github.com/anaclaraaraujo/todaytask/blob/main/LICENSE)
