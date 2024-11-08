@@ -22,7 +22,7 @@
     gap: 1.6rem;
 
     input[type='checkbox'] {
-      display: none; 
+      display: none;
     }
   }
 }
@@ -73,15 +73,19 @@
   border: none;
   background-color: transparent;
   border-radius: 4px;
+  cursor: pointer;
 
   line,
   path {
     transition: 0.2 fill;
   }
 
-  &:hover line,
-  &:hover path {
-    fill: var(--danger);
-    background-color: transparent;
+  &:hover {
+    background-color: var(--gray-400);
+
+    line,
+    path {
+      fill: var(--danger);
+    }
   }
 }
