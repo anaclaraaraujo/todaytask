@@ -1,7 +1,7 @@
 .content {
   max-width: 121.6rem;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 3.2rem;
 }
 
 .taskInfoContainer {
@@ -29,18 +29,16 @@
   }
 }
 
-@media (max-width: 1024px) { 
+@media (max-width: 1440px) { 
   .content {
     max-width: 73.6rem;
-    width: 100%;
-    margin: 0 auto;
   }
 } 
+
 
 @media (max-width: 600px) {
   .content {
     width: 100%;
-    margin: 0 auto;
     padding: 0 2rem;
   }
 } 

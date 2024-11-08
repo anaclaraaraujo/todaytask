@@ -4,59 +4,29 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { TaskItem } from "../../components/TaskItem";
 import { TaskStatus } from "../../components/TaskStatus";
-import styles from './styles.module.css';
 import { PlusCircle } from "@phosphor-icons/react";
 import { NoTasks } from "../../components/NoTasks";
+import { useTasks } from "../../hook/useTasks";
+
 import type { Task } from "../../types/interface";
+
+import styles from './styles.module.css';
 
 
 export function Task() {
-  const [tasks, setTasks] = useState<Task[]>([]);
   const [inputValue, setInputValue] = useState('');
+  const { tasks, addTask, removeTask, toggleTaskStatus } = useTasks();
 
   const checkedTasksCounter = tasks.reduce((prevValue, currentTask) => {
     if (currentTask.isChecked) {
       return prevValue + 1;
     }
-
-    return prevValue
-  }, 0)
+    return prevValue;
+  }, 0);
 
   function handleAddTask() {
-    if (!inputValue) {
-      return;
-    }
-
-    const newTask: Task = {
-      id: new Date().getTime(),
-      text: inputValue,
-      isChecked: false
-    }
-
-    setTasks((state) => [...state, newTask]);
+    addTask(inputValue);
     setInputValue('');
-  }
-
-
-  function handleRemoveTask(id: number) {
-    const filteredTasks = tasks.filter((task) => task.id !== id)
-
-    if (!confirm('Deseja mesmo apagar essa tarefa?')) {
-      return;
-    }
-
-    setTasks(filteredTasks);
-  }
-
-  function handleToggleTask({ id, value }: { id: number; value: boolean }) {
-    const updatedTasks = tasks.map((task) => {
-      if (task.id === id) {
-        return { ...task, isChecked: value }
-      }
-      return { ...task }
-    })
-
-    setTasks(updatedTasks)
   }
 
   return (
@@ -82,20 +52,22 @@ export function Task() {
           />
           {tasks.length > 0 ? (
             <div>
-              {tasks.map((task) => (
-                <TaskItem
-                  key={task.id}
-                  data={task}
-                  removeTask={handleRemoveTask}
-                  toggleTaskStatus={handleToggleTask}
-                />
-              ))}
+              {tasks
+                .sort((a, b) => (a.isChecked === b.isChecked ? 0 : a.isChecked ? 1 : -1))
+                .map((task) => (
+                  <TaskItem
+                    key={task.id}
+                    data={task}
+                    removeTask={removeTask}
+                    toggleTaskStatus={(args) => toggleTaskStatus(args.id, args.value)}
+                  />
+                ))}
             </div>
           ) : (
             <NoTasks />
           )}
         </div>
       </section>
-    </ main>
-  )
+    </main>
+  );
 }
